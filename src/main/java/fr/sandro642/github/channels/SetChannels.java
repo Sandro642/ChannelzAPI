@@ -14,8 +14,8 @@ public class SetChannels {
     }
 
     public static void setChannels(String channels) {
-        getServer().getMessenger().registerOutgoingPluginChannel((Plugin) ChannelzAPI.getInstance(), "Channelz:" + channels);
-        getServer().getMessenger().registerIncomingPluginChannel((Plugin) ChannelzAPI.getInstance(), "BungeeCord:" + channels, (PluginMessageListener) ChannelzAPI.getInstance());
+        getServer().getMessenger().registerOutgoingPluginChannel((Plugin) ChannelzAPI.Channelz(), "Channelz:" + channels);
+        getServer().getMessenger().registerIncomingPluginChannel((Plugin) ChannelzAPI.Channelz(), "Channelz:" + channels, (PluginMessageListener) ChannelzAPI.Channelz());
     }
 
 
