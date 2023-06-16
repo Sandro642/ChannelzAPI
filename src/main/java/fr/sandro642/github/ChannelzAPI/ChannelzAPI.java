@@ -2,6 +2,7 @@ package fr.sandro642.github.ChannelzAPI;
 
 import fr.sandro642.github.channels.GetChannels;
 import fr.sandro642.github.channels.SetChannels;
+import fr.sandro642.github.channels.setData;
 import org.bukkit.plugin.Plugin;
 
 public class ChannelzAPI {
@@ -11,14 +12,38 @@ public class ChannelzAPI {
     public String channelname;
     public String subchannelname;
 
+    // Data
+
+    public String setPlayer(String player) {
+        return player = GetChannels.player;
+    }
+
+    public String setString(String value) {
+        return value = GetChannels.value;
+    }
+
+    public Integer setInteger(Integer integer) {
+        return integer = GetChannels.integer;
+    }
+
+    public Double setDouble(Double aDouble) {
+        return aDouble = GetChannels.aDouble;
+    }
+
+    public Boolean setBoolean(Boolean aBoolean) {
+        return aBoolean = GetChannels.aBoolean;
+    }
+
     private Plugin plugin;
+
     public ChannelzAPI(Plugin plugin) {
         this.plugin = plugin;
         SetChannels.setPlugin(plugin);
         GetChannels.setPlugin(plugin);
+        setData.setPlugin(plugin);
     }
 
-    // Check status of api
+    // Set status
 
     public void setStatus(boolean status) {
         this.status = status;
@@ -34,8 +59,12 @@ public class ChannelzAPI {
 
     public void setSubChannels(String name) {
         if (!status == false) return;
-        // SetChannels.setSubChannels(name);
         this.subchannelname = name;
+    }
+
+    public void launchData() {
+        if (!status == false) return;
+        setData.load();
     }
 
     // Get channels
@@ -44,7 +73,6 @@ public class ChannelzAPI {
         if (!status == false) return;
         GetChannels.onPluginMessageReceived();
     }
-
 
 
 
