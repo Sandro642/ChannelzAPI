@@ -27,7 +27,12 @@ public class GetChannels {
         ByteArrayDataInput in = ByteStreams.newDataInput(message);
         String subchannel = in.readUTF();
         if (subchannel.equals(ChannelzAPI.Channelz().subchannelname)) {
-
+            // getData
+            player = in.readUTF();
+            value = in.readUTF();
+            integer = in.readInt();
+            aDouble = in.readDouble();
+            aBoolean = in.readBoolean();
         }
     }
 

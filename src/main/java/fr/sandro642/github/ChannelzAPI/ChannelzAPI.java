@@ -12,7 +12,7 @@ public class ChannelzAPI {
     public String channelname;
     public String subchannelname;
 
-    // Data
+    // set data
 
     public String setPlayer(String player) {
         return player = GetChannels.player;
@@ -31,6 +31,28 @@ public class ChannelzAPI {
     }
 
     public Boolean setBoolean(Boolean aBoolean) {
+        return aBoolean = GetChannels.aBoolean;
+    }
+
+    // get data
+
+    public String getPlayer(String player) {
+        return player = GetChannels.player;
+    }
+
+    public String getString(String value) {
+        return value = GetChannels.value;
+    }
+
+    public Integer getInteger(Integer integer) {
+        return integer = GetChannels.integer;
+    }
+
+    public Double getDouble(Double aDouble) {
+        return aDouble = GetChannels.aDouble;
+    }
+
+    public Boolean getBoolean(Boolean aBoolean) {
         return aBoolean = GetChannels.aBoolean;
     }
 
