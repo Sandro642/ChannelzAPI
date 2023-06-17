@@ -9,3 +9,5 @@
 ### Le projet sera développé en utilisant le langage de programmation Java et sera compatible avec les dernières versions de Minecraft. Le code source sera disponible sur GitHub, ce qui permettra aux développeurs de contribuer au projet et de proposer des améliorations et des corrections de bugs.
 
 ### En résumé, l'API de communication en channel pour Minecraft permettra aux joueurs de communiquer en utilisant des channels, offrira des fonctionnalités de modération de chat et sera facilement intégrable aux plugins existants.
+
+Fini le : XX.XX.XXXX
