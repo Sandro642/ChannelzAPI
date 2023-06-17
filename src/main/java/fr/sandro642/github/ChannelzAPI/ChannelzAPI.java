@@ -36,24 +36,24 @@ public class ChannelzAPI {
 
     // get data
 
-    public String getPlayer(String player) {
-        return player = GetChannels.player;
+    public String getPlayer() {
+        return GetChannels.player;
     }
 
-    public String getString(String value) {
-        return value = GetChannels.value;
+    public String getString() {
+        return GetChannels.value;
     }
 
-    public Integer getInteger(Integer integer) {
-        return integer = GetChannels.integer;
+    public Integer getInteger() {
+        return GetChannels.integer;
     }
 
-    public Double getDouble(Double aDouble) {
-        return aDouble = GetChannels.aDouble;
+    public Double getDouble() {
+        return GetChannels.aDouble;
     }
 
-    public Boolean getBoolean(Boolean aBoolean) {
-        return aBoolean = GetChannels.aBoolean;
+    public Boolean getBoolean() {
+        return GetChannels.aBoolean;
     }
 
     private Plugin plugin;
