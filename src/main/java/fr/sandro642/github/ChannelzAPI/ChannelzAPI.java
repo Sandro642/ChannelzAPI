@@ -14,24 +14,24 @@ public class ChannelzAPI {
 
     // set data
 
-    public String setPlayer(String player) {
-        return player = GetChannels.player;
+    public void setPlayer(String player) {
+        GetChannels.player = player;
     }
 
-    public String setString(String value) {
-        return value = GetChannels.value;
+    public void setString(String value) {
+        GetChannels.value = value;
     }
 
-    public Integer setInteger(Integer integer) {
-        return integer = GetChannels.integer;
+    public void setInteger(Integer integer) {
+        GetChannels.integer = integer;
     }
 
-    public Double setDouble(Double aDouble) {
-        return aDouble = GetChannels.aDouble;
+    public void setDouble(Double aDouble) {
+        GetChannels.aDouble = aDouble;
     }
 
-    public Boolean setBoolean(Boolean aBoolean) {
-        return aBoolean = GetChannels.aBoolean;
+    public void setBoolean(Boolean aBoolean) {
+        GetChannels.aBoolean = aBoolean;
     }
 
     // get data
@@ -74,29 +74,27 @@ public class ChannelzAPI {
     // Set channels name
 
     public void setChannels(String name) {
-        if (!status == false) return;
+        if (status) return;
         SetChannels.setChannels(name);
         this.channelname = name;
     }
 
     public void setSubChannels(String name) {
-        if (!status == false) return;
+        if (status) return;
         this.subchannelname = name;
     }
 
     public void launchData() {
-        if (!status == false) return;
+        if (status) return;
         setData.load();
     }
 
     // Get channels
 
     public void getChannels() {
-        if (!status == false) return;
+        if (status) return;
         GetChannels.onPluginMessageReceived();
     }
-
-
 
     // Getter class ChannelzAPI
 
