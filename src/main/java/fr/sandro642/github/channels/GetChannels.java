@@ -10,8 +10,9 @@ import org.bukkit.plugin.Plugin;
 public class GetChannels {
 
     private static Plugin plugin;
+
     public static void setPlugin(Plugin plugin) {
-        GetChannels.setPlugin(plugin);
+        GetChannels.plugin = plugin;
     }
 
     public static String player;
@@ -20,10 +21,10 @@ public class GetChannels {
     public static Double aDouble;
     public static Boolean aBoolean;
 
-    public static void onPluginMessageReceived() {
-        String channel = "Channelz:" + ChannelzAPI.Channelz().channelname;
-        byte[] message = new byte[0];
-        if (!channel.equals("Channelz" + ChannelzAPI.Channelz().channelname)) return;
+    public static void onPluginMessageReceived(String channel, byte[] message) {
+        String expectedChannel = "Channelz:" + ChannelzAPI.Channelz().channelname;
+        if (!channel.equals(expectedChannel)) return;
+
         ByteArrayDataInput in = ByteStreams.newDataInput(message);
         String subchannel = in.readUTF();
         if (subchannel.equals(ChannelzAPI.Channelz().subchannelname)) {
@@ -35,5 +36,4 @@ public class GetChannels {
             aBoolean = in.readBoolean();
         }
     }
-
 }
