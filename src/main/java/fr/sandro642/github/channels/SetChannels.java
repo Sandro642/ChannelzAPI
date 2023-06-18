@@ -9,14 +9,13 @@ import static org.bukkit.Bukkit.getServer;
 public class SetChannels {
 
     private static Plugin plugin;
+
     public static void setPlugin(Plugin plugin) {
         SetChannels.plugin = plugin;
     }
 
     public static void setChannels(String channels) {
-        getServer().getMessenger().registerOutgoingPluginChannel((Plugin) ChannelzAPI.Channelz(), "Channelz:" + channels);
-        getServer().getMessenger().registerIncomingPluginChannel((Plugin) ChannelzAPI.Channelz(), "Channelz:" + channels, (PluginMessageListener) ChannelzAPI.Channelz());
+        getServer().getMessenger().registerOutgoingPluginChannel(plugin, "Channelz:" + channels);
+        getServer().getMessenger().registerIncomingPluginChannel(plugin, "Channelz:" + channels, (PluginMessageListener) ChannelzAPI.Channelz());
     }
-
-
 }
