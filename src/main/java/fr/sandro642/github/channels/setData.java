@@ -10,8 +10,9 @@ import org.bukkit.plugin.Plugin;
 public class setData {
 
     private static Plugin plugin;
+
     public static void setPlugin(Plugin plugin) {
-        setData.setPlugin(plugin);
+        setData.plugin = plugin;
     }
 
     public static String player;
@@ -20,17 +21,15 @@ public class setData {
     public static Double aDouble;
     public static Boolean aBoolean;
 
-
     public static void load() {
         String channel = "Channelz:" + ChannelzAPI.Channelz().channelname;
-        if (channel.equals("Channelz" + ChannelzAPI.Channelz().channelname)) {
+        if (channel.equals("Channelz:" + ChannelzAPI.Channelz().channelname)) {
             final ByteArrayDataOutput out = ByteStreams.newDataOutput();
-            final ByteArrayDataInput in = ByteStreams.newDataInput(out.toByteArray());
 
-            String subchannel = in.readUTF();
+            String subchannel = ChannelzAPI.Channelz().subchannelname;
             if (subchannel.equals(ChannelzAPI.Channelz().subchannelname)) {
                 // setData
-                out.writeUTF(String.valueOf(subchannel.equals(ChannelzAPI.Channelz().subchannelname)));
+                out.writeUTF(subchannel);
                 out.writeUTF(player);
                 out.writeUTF(value);
                 out.writeInt(integer);
@@ -39,7 +38,7 @@ public class setData {
 
                 final Player player1 = plugin.getServer().getPlayer(player);
 
-                player1.sendPluginMessage((Plugin) ChannelzAPI.Channelz(), channel, out.toByteArray());
+                player1.sendPluginMessage(plugin, channel, out.toByteArray());
             }
         }
     }
