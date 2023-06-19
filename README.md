@@ -44,3 +44,5 @@ For Gradle
 	        implementation 'com.github.Sandro642:ChannelzAPI:Tag'
 	}
 ```
+
+Bug of API not resolved
