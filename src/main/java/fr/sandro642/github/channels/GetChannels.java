@@ -3,8 +3,9 @@ package fr.sandro642.github.channels;
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 import fr.sandro642.github.ChannelzAPI.ChannelzAPI;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 
 public class GetChannels {
@@ -19,12 +20,10 @@ public class GetChannels {
     public static Integer integer;
     public static Double aDouble;
     public static Boolean aBoolean;
-
-    public static void onPluginMessageReceived() {
+    public static void onPluginMessageReceived(byte[] bytes) {
         String channel = "Channelz:" + ChannelzAPI.Channelz().channelname;
-        byte[] message = new byte[0];
         if (!channel.equals("Channelz" + ChannelzAPI.Channelz().channelname)) return;
-        ByteArrayDataInput in = ByteStreams.newDataInput(message);
+        ByteArrayDataInput in = ByteStreams.newDataInput(bytes);
         String subchannel = in.readUTF();
         if (subchannel.equals(ChannelzAPI.Channelz().subchannelname)) {
             // getData

@@ -92,8 +92,9 @@ public class ChannelzAPI {
     // Get channels
 
     public void getChannels() {
+        byte[] bytes = new byte[0];
         if (!status == false) return;
-        GetChannels.onPluginMessageReceived();
+        GetChannels.onPluginMessageReceived(bytes);
     }
 
 
