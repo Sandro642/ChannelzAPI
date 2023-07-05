@@ -10,7 +10,7 @@
 
 ### En résumé, l'API de communication en channel pour Minecraft permettra aux joueurs de communiquer en utilisant des channels, offrira des fonctionnalités de modération de chat et sera facilement intégrable aux plugins existants.
 
-Fini le : XX.XX.XXXX
+Fini le : 05/07/2023
 
 
 ```
